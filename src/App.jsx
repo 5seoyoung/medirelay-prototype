@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 
 // Pages
+import Landing from './pages/Landing';
 import Home from './pages/Home';
 import QRScan from './pages/QRScan';
 import Record from './pages/Record';
@@ -20,17 +21,65 @@ function App() {
   return (
     <Router basename={basename}>
       <div className="app">
-        <StatusBar />
-        <div className="app-content">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/qr-scan" element={<QRScan />} />
-            <Route path="/record/:patientId" element={<Record />} />
-            <Route path="/chart/:patientId" element={<ChartView />} />
-            <Route path="/handover/:patientId" element={<HandoverView />} />
-            <Route path="/chat/:patientId" element={<Chatbot />} />
-          </Routes>
-        </div>
+        <Routes>
+          {/* 랜딩 페이지 (StatusBar 없음) */}
+          <Route path="/" element={<Landing />} />
+          
+          {/* 앱 내부 페이지들 (StatusBar 포함) */}
+          <Route path="/patients" element={
+            <>
+              <StatusBar />
+              <div className="app-content">
+                <Home />
+              </div>
+            </>
+          } />
+          
+          <Route path="/qr-scan" element={
+            <>
+              <StatusBar />
+              <div className="app-content">
+                <QRScan />
+              </div>
+            </>
+          } />
+          
+          <Route path="/record/:patientId" element={
+            <>
+              <StatusBar />
+              <div className="app-content">
+                <Record />
+              </div>
+            </>
+          } />
+          
+          <Route path="/chart/:patientId" element={
+            <>
+              <StatusBar />
+              <div className="app-content">
+                <ChartView />
+              </div>
+            </>
+          } />
+          
+          <Route path="/handover/:patientId" element={
+            <>
+              <StatusBar />
+              <div className="app-content">
+                <HandoverView />
+              </div>
+            </>
+          } />
+          
+          <Route path="/chat/:patientId" element={
+            <>
+              <StatusBar />
+              <div className="app-content">
+                <Chatbot />
+              </div>
+            </>
+          } />
+        </Routes>
       </div>
     </Router>
   );

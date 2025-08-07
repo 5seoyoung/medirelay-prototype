@@ -3,7 +3,7 @@ import React from 'react';
 const StatusBar = () => {
   const getCurrentTime = () => {
     const now = new Date();
-    return now.toLocaleTimeString('en-US', { 
+    return now.toLocaleTimeString('ko-KR', { 
       hour: '2-digit', 
       minute: '2-digit',
       hour12: false 
@@ -15,11 +15,14 @@ const StatusBar = () => {
       <div className="status-time">
         {getCurrentTime()}
       </div>
-      <div className="status-indicators">
-        <span>●●●</span>
-        <span>📶</span>
-        <span>📶</span>
-        <span>🔋</span>
+      <div style={{
+        fontSize: '14px',
+        fontWeight: '600',
+        background: 'linear-gradient(135deg, #4A90E2, #667eea)',
+        WebkitBackgroundClip: 'text',
+        WebkitTextFillColor: 'transparent'
+      }}>
+        MediRelay
       </div>
     </div>
   );
