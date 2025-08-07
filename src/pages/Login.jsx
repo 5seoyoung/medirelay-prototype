@@ -105,8 +105,8 @@ const Login = () => {
 
   return (
     <div className="page fade-in" style={{ 
-      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-      color: 'white',
+      background: 'white',
+      color: '#333',
       minHeight: '100vh',
       display: 'flex',
       flexDirection: 'column',
@@ -120,14 +120,13 @@ const Login = () => {
           position: 'absolute',
           top: '60px',
           left: '24px',
-          background: 'rgba(255, 255, 255, 0.2)',
-          border: 'none',
-          color: 'white',
+          background: 'white',
+          border: '2px solid #4A90E2',
+          color: '#4A90E2',
           padding: '12px',
           borderRadius: '12px',
           cursor: 'pointer',
-          fontSize: '16px',
-          backdropFilter: 'blur(10px)'
+          fontSize: '16px'
         }}
       >
         ← 홈으로
@@ -142,37 +141,37 @@ const Login = () => {
           width: '80px',
           height: '80px',
           background: 'white',
+          border: '3px solid #4A90E2',
           borderRadius: '20px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           margin: '0 auto 20px',
-          boxShadow: '0 8px 32px rgba(255, 255, 255, 0.2)'
+          boxShadow: '0 8px 32px rgba(74, 144, 226, 0.1)'
         }}>
-          <div style={{
-            fontSize: '32px',
-            background: 'linear-gradient(135deg, #4A90E2, #667eea)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            fontWeight: 'bold'
-          }}>
-            🏥
-          </div>
+          <img 
+            src="/medirelay-logo.svg" 
+            alt="MediRelay Logo"
+            style={{
+              width: '60px',
+              height: '60px'
+            }}
+          />
         </div>
         
         <h1 style={{
           fontSize: '28px',
           fontWeight: '700',
           margin: '0 0 8px',
-          textShadow: '0 2px 4px rgba(0, 0, 0, 0.2)'
+          color: '#333'
         }}>
-          Medi<span style={{ color: '#FFD700' }}>Relay</span>
+          <span style={{ color: '#000' }}>Medi</span><span style={{ color: '#4A90E2' }}>Relay</span>
         </h1>
         
         <p style={{
           fontSize: '16px',
-          opacity: 0.9,
-          margin: 0
+          margin: 0,
+          color: '#666'
         }}>
           간호사 로그인
         </p>
@@ -180,12 +179,12 @@ const Login = () => {
 
       {/* Login Form */}
       <div style={{
-        background: 'rgba(255, 255, 255, 0.1)',
-        backdropFilter: 'blur(20px)',
+        background: 'white',
+        border: '2px solid #4A90E2',
         borderRadius: '24px',
         padding: '32px 24px',
-        border: '1px solid rgba(255, 255, 255, 0.2)',
-        marginBottom: '24px'
+        marginBottom: '24px',
+        boxShadow: '0 8px 32px rgba(74, 144, 226, 0.1)'
       }}>
         <form onSubmit={handleLogin}>
           {/* Employee ID Input */}
@@ -195,7 +194,7 @@ const Login = () => {
               fontSize: '14px',
               fontWeight: '600',
               marginBottom: '8px',
-              opacity: 0.9
+              color: '#333'
             }}>
               사번
             </label>
@@ -208,12 +207,15 @@ const Login = () => {
               style={{
                 width: '100%',
                 padding: '16px',
-                border: '1px solid rgba(255, 255, 255, 0.3)',
+                border: '2px solid #e8e8e8',
                 borderRadius: '12px',
                 fontSize: '16px',
-                background: 'rgba(255, 255, 255, 0.9)',
-                color: '#333'
+                background: 'white',
+                color: '#333',
+                transition: 'border-color 0.2s'
               }}
+              onFocus={(e) => e.target.style.borderColor = '#4A90E2'}
+              onBlur={(e) => e.target.style.borderColor = '#e8e8e8'}
             />
           </div>
 
@@ -224,7 +226,7 @@ const Login = () => {
               fontSize: '14px',
               fontWeight: '600',
               marginBottom: '8px',
-              opacity: 0.9
+              color: '#333'
             }}>
               비밀번호
             </label>
@@ -237,25 +239,29 @@ const Login = () => {
               style={{
                 width: '100%',
                 padding: '16px',
-                border: '1px solid rgba(255, 255, 255, 0.3)',
+                border: '2px solid #e8e8e8',
                 borderRadius: '12px',
                 fontSize: '16px',
-                background: 'rgba(255, 255, 255, 0.9)',
-                color: '#333'
+                background: 'white',
+                color: '#333',
+                transition: 'border-color 0.2s'
               }}
+              onFocus={(e) => e.target.style.borderColor = '#4A90E2'}
+              onBlur={(e) => e.target.style.borderColor = '#e8e8e8'}
             />
           </div>
 
           {/* Error Message */}
           {error && (
             <div style={{
-              background: 'rgba(255, 107, 107, 0.2)',
-              border: '1px solid rgba(255, 107, 107, 0.3)',
+              background: '#ffebee',
+              border: '2px solid #ffcdd2',
               borderRadius: '8px',
               padding: '12px',
               marginBottom: '20px',
               fontSize: '14px',
-              textAlign: 'center'
+              textAlign: 'center',
+              color: '#c62828'
             }}>
               {error}
             </div>
@@ -267,8 +273,8 @@ const Login = () => {
             disabled={isLoading}
             style={{
               width: '100%',
-              background: isLoading ? 'rgba(255, 255, 255, 0.5)' : 'white',
-              color: '#4A90E2',
+              background: isLoading ? '#e8e8e8' : '#4A90E2',
+              color: 'white',
               border: 'none',
               borderRadius: '16px',
               padding: '18px',
@@ -287,7 +293,7 @@ const Login = () => {
                 <div className="loading-spinner" style={{ 
                   width: '20px', 
                   height: '20px',
-                  borderColor: '#4A90E2 transparent #4A90E2 transparent'
+                  borderColor: 'white transparent white transparent'
                 }}></div>
                 로그인 중...
               </>
@@ -302,18 +308,18 @@ const Login = () => {
 
       {/* Demo Accounts */}
       <div style={{
-        background: 'rgba(255, 255, 255, 0.1)',
-        backdropFilter: 'blur(10px)',
+        background: 'white',
+        border: '2px solid #4A90E2',
         borderRadius: '16px',
         padding: '20px',
-        border: '1px solid rgba(255, 255, 255, 0.2)'
+        boxShadow: '0 4px 16px rgba(74, 144, 226, 0.1)'
       }}>
         <div style={{
           fontSize: '14px',
           fontWeight: '600',
           marginBottom: '12px',
           textAlign: 'center',
-          opacity: 0.9
+          color: '#333'
         }}>
           📱 데모 계정 (빠른 로그인)
         </div>
@@ -328,21 +334,27 @@ const Login = () => {
               key={index}
               onClick={() => handleDemoLogin(account)}
               style={{
-                background: 'rgba(255, 255, 255, 0.2)',
-                border: '1px solid rgba(255, 255, 255, 0.3)',
+                background: 'white',
+                border: '2px solid #4A90E2',
                 borderRadius: '12px',
                 padding: '12px 8px',
-                color: 'white',
+                color: '#333',
                 fontSize: '12px',
                 cursor: 'pointer',
                 transition: 'all 0.2s',
                 textAlign: 'center'
               }}
-              onMouseOver={(e) => e.target.style.background = 'rgba(255, 255, 255, 0.3)'}
-              onMouseOut={(e) => e.target.style.background = 'rgba(255, 255, 255, 0.2)'}
+              onMouseOver={(e) => {
+                e.target.style.background = '#f8f9fa';
+                e.target.style.borderColor = '#357ABD';
+              }}
+              onMouseOut={(e) => {
+                e.target.style.background = 'white';
+                e.target.style.borderColor = '#4A90E2';
+              }}
             >
-              <div style={{ fontWeight: '600' }}>{account.name}</div>
-              <div style={{ opacity: 0.8, fontSize: '10px' }}>
+              <div style={{ fontWeight: '600', color: '#333' }}>{account.name}</div>
+              <div style={{ color: '#666', fontSize: '10px' }}>
                 {account.employeeId}
               </div>
             </button>
@@ -353,7 +365,7 @@ const Login = () => {
           fontSize: '12px',
           textAlign: 'center',
           marginTop: '12px',
-          opacity: 0.7
+          color: '#666'
         }}>
           모든 계정 비밀번호: 1234 (demo 계정은 demo/demo)
         </div>
@@ -364,7 +376,7 @@ const Login = () => {
         textAlign: 'center',
         marginTop: '32px',
         fontSize: '12px',
-        opacity: 0.7
+        color: '#999'
       }}>
         보안을 위해 공용 기기에서는 로그아웃해주세요
       </div>

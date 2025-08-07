@@ -35,8 +35,8 @@ const Landing = () => {
 
   return (
     <div className="page fade-in" style={{ 
-      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-      color: 'white',
+      background: 'white',
+      color: '#333',
       textAlign: 'center',
       minHeight: '100vh',
       display: 'flex',
@@ -52,23 +52,21 @@ const Landing = () => {
           position: 'absolute',
           top: '40px',
           right: '24px',
-          background: 'rgba(255, 255, 255, 0.2)',
-          backdropFilter: 'blur(10px)',
+          background: 'white',
+          border: '2px solid #4A90E2',
           borderRadius: '12px',
           padding: '8px 12px',
-          fontSize: '12px',
-          border: '1px solid rgba(255, 255, 255, 0.3)'
+          fontSize: '12px'
         }}>
-          <div style={{ fontWeight: '600' }}>{currentUser.name}</div>
+          <div style={{ fontWeight: '600', color: '#333' }}>{currentUser.name}</div>
           <button
             onClick={handleLogout}
             style={{
               background: 'none',
               border: 'none',
-              color: 'white',
+              color: '#4A90E2',
               fontSize: '10px',
               cursor: 'pointer',
-              opacity: 0.8,
               marginTop: '4px'
             }}
           >
@@ -86,38 +84,38 @@ const Landing = () => {
           width: '120px',
           height: '120px',
           background: 'white',
+          border: '3px solid #4A90E2',
           borderRadius: '24px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           margin: '0 auto 24px',
-          boxShadow: '0 8px 32px rgba(255, 255, 255, 0.2)'
+          boxShadow: '0 8px 32px rgba(74, 144, 226, 0.1)'
         }}>
-          <div style={{
-            fontSize: '48px',
-            background: 'linear-gradient(135deg, #4A90E2, #667eea)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            fontWeight: 'bold'
-          }}>
-            🏥
-          </div>
+          <img 
+            src="/medirelay-logo.svg" 
+            alt="MediRelay Logo"
+            style={{
+              width: '80px',
+              height: '80px'
+            }}
+          />
         </div>
         
         <h1 style={{
           fontSize: '32px',
           fontWeight: '700',
           margin: '0 0 12px',
-          textShadow: '0 2px 4px rgba(0, 0, 0, 0.2)'
+          color: '#333'
         }}>
-          Medi<span style={{ color: '#FFD700' }}>Relay</span>
+          <span style={{ color: '#000' }}>Medi</span><span style={{ color: '#4A90E2' }}>Relay</span>
         </h1>
         
         <p style={{
           fontSize: '18px',
-          opacity: 0.9,
           margin: 0,
-          fontWeight: '300'
+          fontWeight: '300',
+          color: '#666'
         }}>
           AI 기반 차세대 간호기록 시스템
         </p>
@@ -126,19 +124,19 @@ const Landing = () => {
       {/* Welcome Message */}
       {currentUser && (
         <div style={{
-          background: 'rgba(255, 255, 255, 0.1)',
-          backdropFilter: 'blur(10px)',
+          background: 'white',
+          border: '2px solid #4A90E2',
           borderRadius: '16px',
           padding: '20px',
           marginBottom: '32px',
-          border: '1px solid rgba(255, 255, 255, 0.2)',
-          maxWidth: '320px'
+          maxWidth: '320px',
+          boxShadow: '0 4px 16px rgba(74, 144, 226, 0.1)'
         }}>
           <div style={{ fontSize: '20px', marginBottom: '8px' }}>👋</div>
-          <div style={{ fontWeight: '600', marginBottom: '4px' }}>
+          <div style={{ fontWeight: '600', marginBottom: '4px', color: '#333' }}>
             안녕하세요, {currentUser.name}님!
           </div>
-          <div style={{ fontSize: '14px', opacity: 0.8 }}>
+          <div style={{ fontSize: '14px', color: '#666' }}>
             {currentUser.department} • {currentUser.position}
           </div>
         </div>
@@ -155,43 +153,43 @@ const Landing = () => {
           gap: '20px'
         }}>
           <div style={{
-            background: 'rgba(255, 255, 255, 0.1)',
-            backdropFilter: 'blur(10px)',
+            background: 'white',
+            border: '2px solid #4A90E2',
             borderRadius: '16px',
             padding: '20px',
-            border: '1px solid rgba(255, 255, 255, 0.2)'
+            boxShadow: '0 4px 16px rgba(74, 144, 226, 0.1)'
           }}>
             <div style={{ fontSize: '24px', marginBottom: '8px' }}>🎙️</div>
-            <div style={{ fontWeight: '600', marginBottom: '4px' }}>음성 차팅</div>
-            <div style={{ fontSize: '14px', opacity: 0.8 }}>
+            <div style={{ fontWeight: '600', marginBottom: '4px', color: '#333' }}>음성 차팅</div>
+            <div style={{ fontSize: '14px', color: '#666' }}>
               말로 기록하면 AI가 자동으로 간호기록 작성
             </div>
           </div>
 
           <div style={{
-            background: 'rgba(255, 255, 255, 0.1)',
-            backdropFilter: 'blur(10px)',
+            background: 'white',
+            border: '2px solid #4A90E2',
             borderRadius: '16px',
             padding: '20px',
-            border: '1px solid rgba(255, 255, 255, 0.2)'
+            boxShadow: '0 4px 16px rgba(74, 144, 226, 0.1)'
           }}>
             <div style={{ fontSize: '24px', marginBottom: '8px' }}>🤖</div>
-            <div style={{ fontWeight: '600', marginBottom: '4px' }}>AI 분류 & 요약</div>
-            <div style={{ fontSize: '14px', opacity: 0.8 }}>
+            <div style={{ fontWeight: '600', marginBottom: '4px', color: '#333' }}>AI 분류 & 요약</div>
+            <div style={{ fontSize: '14px', color: '#666' }}>
               V/S, I/O, 투약 등 자동 분류 및 인계장 생성
             </div>
           </div>
 
           <div style={{
-            background: 'rgba(255, 255, 255, 0.1)',
-            backdropFilter: 'blur(10px)',
+            background: 'white',
+            border: '2px solid #4A90E2',
             borderRadius: '16px',
             padding: '20px',
-            border: '1px solid rgba(255, 255, 255, 0.2)'
+            boxShadow: '0 4px 16px rgba(74, 144, 226, 0.1)'
           }}>
             <div style={{ fontSize: '24px', marginBottom: '8px' }}>💬</div>
-            <div style={{ fontWeight: '600', marginBottom: '4px' }}>스마트 질의응답</div>
-            <div style={{ fontSize: '14px', opacity: 0.8 }}>
+            <div style={{ fontWeight: '600', marginBottom: '4px', color: '#333' }}>스마트 질의응답</div>
+            <div style={{ fontSize: '14px', color: '#666' }}>
               "오늘 체온이 어떻게 됐나요?" 자연어 질문 가능
             </div>
           </div>
@@ -202,25 +200,27 @@ const Landing = () => {
       <button
         onClick={handleStartClick}
         style={{
-          background: 'white',
-          color: '#4A90E2',
+          background: '#4A90E2',
+          color: 'white',
           border: 'none',
           borderRadius: '50px',
           padding: '16px 32px',
           fontSize: '18px',
           fontWeight: '600',
           cursor: 'pointer',
-          boxShadow: '0 8px 32px rgba(255, 255, 255, 0.3)',
+          boxShadow: '0 8px 32px rgba(74, 144, 226, 0.3)',
           transition: 'all 0.3s ease',
           marginBottom: '32px'
         }}
         onMouseOver={(e) => {
           e.target.style.transform = 'translateY(-2px)';
-          e.target.style.boxShadow = '0 12px 40px rgba(255, 255, 255, 0.4)';
+          e.target.style.boxShadow = '0 12px 40px rgba(74, 144, 226, 0.4)';
+          e.target.style.background = '#357ABD';
         }}
         onMouseOut={(e) => {
           e.target.style.transform = 'translateY(0)';
-          e.target.style.boxShadow = '0 8px 32px rgba(255, 255, 255, 0.3)';
+          e.target.style.boxShadow = '0 8px 32px rgba(74, 144, 226, 0.3)';
+          e.target.style.background = '#4A90E2';
         }}
       >
         {currentUser ? '🏥 업무 시작하기' : '🚀 로그인하기'}
@@ -228,12 +228,12 @@ const Landing = () => {
 
       {/* Demo Notice */}
       <div style={{
-        background: 'rgba(255, 255, 255, 0.1)',
+        background: 'white',
+        border: '1px solid #4A90E2',
         borderRadius: '12px',
         padding: '12px 20px',
         fontSize: '14px',
-        opacity: 0.9,
-        border: '1px solid rgba(255, 255, 255, 0.2)'
+        color: '#666'
       }}>
         📱 데모 버전 • OpenAI API 시뮬레이션 모드
       </div>
@@ -245,9 +245,9 @@ const Landing = () => {
         left: '50%',
         transform: 'translateX(-50%)',
         fontSize: '12px',
-        opacity: 0.7
+        color: '#999'
       }}>
-        MediRelay v1.0 • Made with MediX for Healthcare
+        MediRelay v1.0 • Made with ❤️ for Healthcare
       </div>
     </div>
   );
