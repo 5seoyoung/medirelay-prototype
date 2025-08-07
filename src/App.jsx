@@ -14,8 +14,11 @@ import Chatbot from './pages/Chatbot';
 import StatusBar from './components/StatusBar';
 
 function App() {
+  // GitHub Pages용 basename 설정
+  const basename = process.env.NODE_ENV === 'production' ? '/medirelay-prototype' : '';
+
   return (
-    <Router>
+    <Router basename={basename}>
       <div className="app">
         <StatusBar />
         <div className="app-content">
