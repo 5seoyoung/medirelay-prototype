@@ -8,8 +8,8 @@ const Landing = () => {
     <div 
       className="page fade-in" 
       style={{ 
-        background: 'linear-gradient(135deg, #131414ff 0%, #4A90E2 100%)',
-        color: 'white',
+        background: 'linear-gradient(135deg, #ffffffff 100%, #4A90E2 100%)',
+        color: 'black',
         textAlign: 'center',
         minHeight: '100vh',
         display: 'flex',
@@ -31,13 +31,13 @@ const Landing = () => {
           style={{
             width: '120px',
             height: '120px',
-            background: '#4A90E2',
+            background: '#ffffffff',
             borderRadius: '24px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             margin: '0 auto 24px',
-            boxShadow: '0 8px 32px rgba(255, 255, 255, 0.2)'
+            boxShadow: '0 8px 32px rgba(30, 29, 29, 0.2)'
           }}
         >
           <img 
@@ -89,7 +89,7 @@ const Landing = () => {
         >
           <div 
             style={{
-              background: 'rgba(255, 255, 255, 0.1)',
+              background: 'rgba(255, 255, 255, 0.41)',
               backdropFilter: 'blur(10px)',
               borderRadius: '16px',
               padding: '20px',
@@ -105,11 +105,11 @@ const Landing = () => {
 
           <div 
             style={{
-              background: 'rgba(255, 255, 255, 0.1)',
+              background: 'rgba(255, 255, 255, 0.41)',
               backdropFilter: 'blur(10px)',
               borderRadius: '16px',
               padding: '20px',
-              border: '1px solid rgba(255, 255, 255, 0.2)'
+              border: '1px solid rgba(255, 255, 255, 0.41)'
             }}
           >
             <div style={{ fontSize: '24px', marginBottom: '8px' }}>🤖</div>
@@ -141,8 +141,8 @@ const Landing = () => {
       <button
         onClick={() => navigate('/patients')}
         style={{
-          background: 'white',
-          color: '#4A90E2',
+          background: '#4A90E2',
+          color: 'white',
           border: 'none',
           borderRadius: '50px',
           padding: '16px 32px',
