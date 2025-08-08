@@ -138,51 +138,44 @@ const Login = () => {
           textAlign: 'center',
           marginBottom: '48px'
         }}>
-          {/* Logo */}
-          <div style={{ 
-            marginBottom: '40px',
-            animation: 'fadeIn 1s ease-in-out'
+          <div style={{
+            width: '80px',
+            height: '80px',
+            background: 'white',
+            border: '3px solid #4A90E2',
+            borderRadius: '20px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            margin: '0 auto 20px',
+            boxShadow: '0 8px 32px rgba(74, 144, 226, 0.1)'
           }}>
-            <div style={{
-              width: '120px',
-              height: '120px',
-              background: 'white',
-              border: '3px solid #4A90E2',
-              borderRadius: '24px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              margin: '0 auto 24px',
-              boxShadow: '0 8px 32px rgba(74, 144, 226, 0.1)'
-            }}>
-              <img 
-                src={`${import.meta.env.BASE_URL}medirelay-logo.svg`} 
-                alt="MediRelay Logo"
-                style={{
-                  width: '80px',
-                  height: '80px'
-                }}
-              />
-            </div>
-
-            <h1 style={{
-              fontSize: '28px',
-              fontWeight: '700',
-              margin: '0 0 8px',
-              color: '#333'
-            }}>
-              <span style={{ color: '#000' }}>Medi</span>
-              <span style={{ color: '#4A90E2' }}>Relay</span>
-            </h1>
-            
-            <p style={{
-              fontSize: '16px',
-              margin: 0,
-              color: '#666'
-            }}>
-              간호사 로그인
-            </p>
+            <img 
+              src={`${import.meta.env.BASE_URL}medirelay-logo.svg`} 
+              alt="MediRelay Logo"
+              style={{
+                width: '60px',
+                height: '60px'
+              }}
+            />
           </div>
+          
+          <h1 style={{
+            fontSize: '28px',
+            fontWeight: '700',
+            margin: '0 0 8px',
+            color: '#333'
+          }}>
+            <span style={{ color: '#000' }}>Medi</span><span style={{ color: '#4A90E2' }}>Relay</span>
+          </h1>
+          
+          <p style={{
+            fontSize: '16px',
+            margin: 0,
+            color: '#666'
+          }}>
+            간호사 로그인
+          </p>
         </div>
 
         {/* Login Form */}
@@ -361,9 +354,7 @@ const Login = () => {
                   e.target.style.borderColor = '#4A90E2';
                 }}
               >
-                <div style={{ fontWeight: '600', color: '#333' }}>
-                  {account.name}
-                </div>
+                <div style={{ fontWeight: '600', color: '#333' }}>{account.name}</div>
                 <div style={{ color: '#666', fontSize: '10px' }}>
                   {account.employeeId}
                 </div>
